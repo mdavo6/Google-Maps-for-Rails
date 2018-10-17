@@ -581,6 +581,7 @@
         url: this.args[picture_name].url,
         anchor: this._createImageAnchorPosition(this.args[picture_name].anchor),
         size: new (this.primitives().size)(this.args[picture_name].width, this.args[picture_name].height),
+        labelOrigin: this._createImageLabelOriginPosition(this.args[picture_name].labelOrigin),
         scaledSize: null,
         origin: null
       };

@@ -86,6 +86,7 @@ class @Gmaps.Google.Builders.Marker extends Gmaps.Objects.BaseBuilder
       size: new(@primitives().size)(@args[picture_name].width, @args[picture_name].height)
       scaledSize: null
       origin: @_createImageAnchorPosition @args[picture_name].origin
+      labelOrigin: @_createImageLabelOriginPosition @args[picture_name].labelOrigin
     if @args[picture_name].scaledWidth and @args[picture_name].scaledHeight
       _.extend return_args, scaledSize: new(@primitives().size)(@args[picture_name].scaledWidth, @args[picture_name].scaledHeight)
     return_args
@@ -93,6 +94,10 @@ class @Gmaps.Google.Builders.Marker extends Gmaps.Objects.BaseBuilder
   _createImageAnchorPosition : (anchorLocation) ->
     return null unless _.isArray anchorLocation
     new(@primitives().point)(anchorLocation[0], anchorLocation[1])
+
+  _createImageLabelOriginPosition : (labelLocation) ->
+    return null unless _.isArray labelLocation
+    new(@primitives().point)(labelLocation[0], labelLocation[1])
 
   _should_close_infowindow: ->
     @internal_options.singleInfowindow and @constructor.CURRENT_INFOWINDOW?

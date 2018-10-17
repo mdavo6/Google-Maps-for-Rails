@@ -20,6 +20,7 @@ module Gmaps4rails
   #                     :height => "64",
   #                     :scaledWidth => "32", # Scaled width is half of the retina resolution; optional
   #                     :scaledHeight => "32", # Scaled width is half of the retina resolution; optional
+  #                     :labelOrigin => "X"
   #                    })
   #     marker.title   "i'm the title"
   #     marker.label   "i'm the label"
