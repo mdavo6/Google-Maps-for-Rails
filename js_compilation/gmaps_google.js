@@ -571,7 +571,7 @@
 
     Marker.prototype._create_or_retrieve_image = function(picture_args) {
       if (this.constructor.CACHE_STORE[picture_args.url] === void 0) {
-        this.constructor.CACHE_STORE[picture_args.url] = new (this.primitives().markerImage)(picture_args.url, picture_args.size, picture_args.origin, picture_args.anchor, picture_args.scaledSize);
+        this.constructor.CACHE_STORE[picture_args.url] = new (this.primitives().markerImage)(picture_args.url, picture_args.size, picture_args.origin, picture_args.anchor, picture_args.scaledSize, picture_args.labelOrigin);
       }
       return this.constructor.CACHE_STORE[picture_args.url];
     };
@@ -592,6 +592,13 @@
         return null;
       }
       return new (this.primitives().point)(anchorLocation[0], anchorLocation[1]);
+    };
+
+    Marker.prototype._createImageLabelOriginPosition = function(labelLocation) {
+      if (!_.isArray(labelLocation)) {
+        return null;
+      }
+      return new (this.primitives().point)(labelLocation[0], labelLocation[1]);
     };
 
     Marker.prototype._should_close_infowindow = function() {
