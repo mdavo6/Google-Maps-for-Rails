@@ -4,6 +4,7 @@ module Gmaps4rails
   # - picture
   # - shadow
   # - title
+  # - label
   # - sidebar
   # - json
   #
@@ -21,6 +22,7 @@ module Gmaps4rails
   #                     :scaledHeight => "32", # Scaled width is half of the retina resolution; optional
   #                    })
   #     marker.title   "i'm the title"
+  #     marker.label   "i'm the label"
   #     marker.json({ :id => user.id })
   #   end
   class MarkersBuilder
@@ -62,6 +64,10 @@ module Gmaps4rails
 
       def title(string)
         @hash[:marker_title] = string
+      end
+
+      def label(string)
+        @hash[:marker_label] = string
       end
 
       def json(hash)

@@ -23,6 +23,7 @@ describe Gmaps4rails::MarkersBuilder do
       :lat          => lat,
       :lng          => lng,
       :marker_title => name,
+      :marker_label => label,
       :some_id      => id,
       :infowindow   => infowindow,
       :picture      => picture,
@@ -42,6 +43,7 @@ describe Gmaps4rails::MarkersBuilder do
         marker.picture    picture
         marker.shadow     shadow
         marker.title      user.name
+        marker.label      user.name
         marker.json({ :some_id => user.some_id })
       end
     }

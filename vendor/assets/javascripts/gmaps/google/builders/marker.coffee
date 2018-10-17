@@ -8,6 +8,7 @@ class @Gmaps.Google.Builders.Marker extends Gmaps.Objects.BaseBuilder
   #   lng
   #   infowindow
   #   marker_title
+  #   marker_label
   #   picture
   #     anchor: [x,y]
   #     url
@@ -47,6 +48,7 @@ class @Gmaps.Google.Builders.Marker extends Gmaps.Objects.BaseBuilder
     coords = @_randomized_coordinates()
     base_options =
       title:    @args.marker_title
+      label:    @args.marker_label
       position: new(@primitives().latLng)(coords[0], coords[1])
       icon:     @_get_picture('picture')
       shadow:   @_get_picture('shadow')

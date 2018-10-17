@@ -531,6 +531,7 @@
       coords = this._randomized_coordinates();
       base_options = {
         title: this.args.marker_title,
+        label: this.args.marker_label,
         position: new (this.primitives().latLng)(coords[0], coords[1]),
         icon: this._get_picture('picture'),
         shadow: this._get_picture('shadow')

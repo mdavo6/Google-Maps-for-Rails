@@ -65,6 +65,24 @@ describe("Gmaps.Google.Builders.Marker", function() {
         });
       });
 
+      describe("label", function() {
+        it("without label", function() {
+          instance = new subject_klass({}, {}, {});
+
+          var result = instance.marker_options();
+
+          expect(result.label).toBeUndefined();
+        });
+
+        it("with label", function() {
+          instance = new subject_klass({marker_label: 'label'}, {}, { maxRandomDistance: 12 });
+
+          var result = instance.marker_options();
+
+          expect(result.label).toEqual('label');
+        });
+      });
+
       describe("merge with provider options", function() {
         it("no provider options", function() {
           instance = new subject_klass({}, {}, {});
